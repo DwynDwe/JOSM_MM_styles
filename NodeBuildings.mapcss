@@ -1,0 +1,25 @@
+meta {
+    title: "NodeBuildings";
+    description: "Shows a customizable dot on building nodes.";
+    version: "1.0_2025-05-18";
+    author: "DNL852";
+}
+
+setting::building_dot_color {
+    type: color;
+    label: tr("Building dot color");
+    default: #ff0000;
+}
+
+node[building] {
+    icon-image: none;
+}
+
+node[building]::building_dot {
+    symbol-shape: circle;
+    symbol-size: 6;
+    symbol-fill-color: setting("building_dot_color");
+    symbol-stroke-color: setting("building_dot_color");
+    symbol-stroke-width: 2;
+    z-index: 100;
+}
